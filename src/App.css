@@ -1,0 +1,27 @@
+body{
+font-family:Arial;
+background:#f4f4f4;
+}
+.board{
+display:flex;
+justify-content:space-around;
+padding:20px;
+flex-wrap:wrap;
+}
+.column{
+background:white;
+padding:15px;
+border-radius:8px;
+width:300px;
+min-height:300px;
+box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+.task{
+background:#e3e3e3;
+margin:10px 0;
+padding:10px;
+border-radius:5px;
+}
+.buttons button{
+margin:3px;
+}
