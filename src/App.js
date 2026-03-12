@@ -14,17 +14,17 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  return (
+  const toggleMode = () => {
+    setDarkMode(prev => !prev);
+  };
 
+  return (
     <div className={darkMode ? "app dark" : "app light"}>
 
       <h1>Kanban Task Board</h1>
 
-      <button
-        className="toggle"
-        onClick={() => setDarkMode(!darkMode)}
-      >
-        {darkMode ? "Light Mode ☀️" : "Dark Mode 🌙"}
+      <button onClick={toggleMode}>
+        Toggle Mode
       </button>
 
       <Board tasks={tasks} setTasks={setTasks} />
