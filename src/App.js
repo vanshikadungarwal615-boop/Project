@@ -1,36 +1,22 @@
-import React, { useState, useEffect } from "react";
-import Board from "./components/Board";
+import React, { useState } from "react";
 import "./App.css";
-
 function App() {
-
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
-
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
+  const [mode, setMode] = useState("light");
   const toggleMode = () => {
-    setDarkMode(prev => !prev);
+    if (mode === "light") {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
   };
-
   return (
-    <div className={darkMode ? "app dark" : "app light"}>
-
-      <h1>Kanban Task Board</h1>
-
+    <div className={`app ${mode}`}>
+      <h1>Kanban Board</h1>
       <button onClick={toggleMode}>
-        Toggle Mode
+        Change Mode
       </button>
-
-      <Board tasks={tasks} setTasks={setTasks} />
-
+      <p>Current Mode: {mode}</p>
     </div>
   );
 }
-
 export default App;
