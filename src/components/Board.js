@@ -1,6 +1,6 @@
 import React from "react";
 import Column from "./Column";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext } from "react-dnd";
 const columns = ["Todo", "In Progress", "Done"];
 function Board({ tasks, setTasks }) {
   const onDragEnd = (result) => {

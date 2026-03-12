@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TaskCard from "./TaskCard";
-import { Droppable } from "react-beautiful-dnd";
+import { Droppable } from "react-dnd";
 function Column({ title, tasks, setTasks }) {
   const [newTask, setNewTask] = useState("");
   const addTask = () => {
